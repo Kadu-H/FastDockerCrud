@@ -1,0 +1,23 @@
+{
+  "name": "fastdockercrud",
+  "version": "1.0.0",
+  "description": "Criando Um CRUD simples para aprender a usar o Fastify, com docker!",
+  "main": "server",
+  "type":"module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kadu-H/FastDockerCrud.git"
+  },
+  "author": "Kdu.dev",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Kadu-H/FastDockerCrud/issues"
+  },
+  "homepage": "https://github.com/Kadu-H/FastDockerCrud#readme",
+  "dependencies": {
+    "fastify": "^5.4.0"
+  }
+}
