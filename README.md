@@ -43,10 +43,40 @@ Se tudo estiver correto, você verá a mensagem:
 {"msg":"Hello World"}
 ```
 
+## Como rodar a aplicação com Docker Compose
+
+### Pré-requisitos
+- [Docker](https://www.docker.com/) instalado
+- [Docker Compose](https://docs.docker.com/compose/) instalado
+
+### Passos
+
+1. **Clone o repositório (se necessário):**
+   ```sh
+   git clone https://github.com/Kadu-H/FastDockerCrud.git
+   cd FastDockerCrud
+   ```
+
+2. **Suba os containers com Docker Compose:**
+   ```sh
+   docker compose up
+   ```
+
+3. **Acesse a aplicação:**
+   Abra o navegador e acesse [http://localhost:3000](http://localhost:3000)
+
+Se tudo estiver correto, você verá a mensagem:
+```json
+{"msg":"Hello World"}
+```
+
 ## Estrutura dos arquivos principais
 
 - `server.js`: Código principal do servidor Fastify.
+- `db/prisma.js`: Instância do Prisma Client conectando ao Postgres.
+- `prisma/schema.prisma`: Schema do banco de dados.
 - `Dockerfile`: Instruções para criar a imagem Docker.
+- `docker-compose.yml`: Orquestração dos containers.
 
 ---
 Sinta-se à vontade para modificar e experimentar!
