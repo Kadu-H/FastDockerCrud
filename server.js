@@ -1,13 +1,12 @@
 import fastify from "fastify";
 import prisma from "./db/prisma.js";
+import itemsRoutes from "./routers/itemRoutes.js";
 
 const server = fastify({
     logger: true,
 });
 
-server.get("/", (req, res) => {
-    return res.send({ msg: "Hello World" });
-})
+server.register(itemsRoutes);
 
 const startServer = async () => {
     try {

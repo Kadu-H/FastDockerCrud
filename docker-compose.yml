@@ -1,26 +1,26 @@
 services:
-    server:
-        build:
-            context: .
-            dockerfile: Dockerfile
-        working_dir: /usr/server
-        ports:
-          - "3000:3000"
-        depends_on:
-          - postgres
-        environment:
-          - DATABASE_URL=postgresql://fastdockercrud:password_fdc@postgres:5432/polls?schema=public
-
-    postgres:
-        image: bitnami/postgresql:latest
-        ports:
-          - "5432:5432"
-        environment:
-          - POSTGRES_USER=fastdockercrud
-          - POSTGRES_PASSWORD=password_fdc
-          - POSTGRES_DB=polls
-        volumes:
-          - polls_pg_data:/bitnami/postgresql
-
+  postgres:
+    image: bitnami/postgresql:latest
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_USER=fastdockercrud
+      - POSTGRES_PASSWORD=password_fdc
+      - POSTGRES_DB=polls
+    volumes:
+      - polls_pg_data:/bitnami/postgresql
+  server:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        DATABASE_URL: postgresql://fastdockercrud:password_fdc@postgres:5432/polls?schema=public
+    ports:
+      - "3000:3000"
+    depends_on:
+      - postgres
+    environment:
+      - DATABASE_URL=postgresql://fastdockercrud:password_fdc@postgres:5432/polls?schema=public
+      
 volumes:
   polls_pg_data:
