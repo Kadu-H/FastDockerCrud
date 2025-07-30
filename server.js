@@ -1,6 +1,8 @@
 import fastify from "fastify";
 import prisma from "./db/prisma.js";
-import itemsRoutes from "./routers/itemRoutes.js";
+import itemsRoutes from "./routes/itemRoutes.js";
+
+import "dotenv/config";
 
 const server = fastify({
     logger: true,

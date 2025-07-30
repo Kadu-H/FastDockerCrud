@@ -27,17 +27,24 @@ Completamos o processo do CRUD, e está tudo rodando no Docker!
    cd FastDockerCrud
    ```
 
-2. **Suba os containers (servidor e banco de dados):**
+2. **Configure as variaveis de ambientes (Conexão com banco de dados):**
+   Crie um arquivo .env e adicione a url de conexão com o banco de dados, ou apenas renomei o arquivo ".env.example" para ".env"
+   ```sh
+   DATABASE_URL="postgresql://fastdockercrud:password_fdc@localhost:5432/polls?schema=public"
+
+   ```
+
+3. **Suba os containers (servidor e banco de dados):**
    ```sh
    docker compose build
    ```
 
-3. **Rode o container:**
+4. **Rode o container:**
    ```sh
    docker compose up
    ```
 
-4. **Acesse a aplicação:**
+5. **Acesse a aplicação:**
    Abra o navegador e acesse [http://localhost:3000](http://localhost:3000)
 
 ## Rotas da API
@@ -130,7 +137,7 @@ Completamos o processo do CRUD, e está tudo rodando no Docker!
 - `prisma/schema.prisma`: Schema do banco de dados
 - `models/itemModel.js`: Funções de acesso ao banco
 - `controllers/itemController.js`: Lógica das rotas
-- `routers/itemRoutes.js`: Definição das rotas
+- `routes/itemRoutes.js`: Definição das rotas
 - `Dockerfile` e `docker-compose.yml`: Configuração dos containers
 - `entrypoint.sh`: Script de inicialização do servidor e migrações do banco de dados
 

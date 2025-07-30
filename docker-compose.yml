@@ -13,14 +13,10 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-      args:
-        DATABASE_URL: postgresql://fastdockercrud:password_fdc@postgres:5432/polls?schema=public
     ports:
       - "3000:3000"
     depends_on:
       - postgres
-    environment:
-      - DATABASE_URL=postgresql://fastdockercrud:password_fdc@postgres:5432/polls?schema=public
-      
+
 volumes:
   polls_pg_data:
