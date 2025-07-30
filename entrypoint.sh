@@ -8,7 +8,7 @@ do
 done
 
 echo "Banco disponível! Rodando migrations..."
-npx prisma migrate dev --name init
+npx prisma migrate deploy
 
 echo "Iniciando aplicação..."
 npm start
